@@ -23,6 +23,7 @@ enum Endpoint {
     case login
     case ping
     case user(Int)
+    case allAlbums
 
     var path: String {
        NetworkConstants.baseURLString + _path
@@ -60,6 +61,8 @@ enum Endpoint {
             return "/"
         case .user(let userId):
             return "/user/\(userId)/info"
+        case .allAlbums:
+            return "/album/all"
         }
     }
 }

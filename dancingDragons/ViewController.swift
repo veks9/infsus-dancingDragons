@@ -18,14 +18,12 @@ class ViewController: UIViewController {
         AlbumService().addSongsToAlbum(albumId: 3, songIds: [1,2,3])
             .subscribe(onNext: { [weak self] response in
                 guard let self = self else { return }
-                print("🔴🔴🔴🔴\(response)🔴🔴🔴🔴")
             })
             .disposed(by: disposeBag)
         
 //        UserService().getUser(with: 10)
 //            .subscribe(onNext: { [weak self] response in
 //                guard let self = self else { return }
-//                print("🔴🔴🔴🔴\(response)🔴🔴🔴🔴")
 //            })
 //            .disposed(by: disposeBag)
     }

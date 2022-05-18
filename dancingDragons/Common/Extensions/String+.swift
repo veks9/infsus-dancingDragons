@@ -12,3 +12,9 @@ extension String {
         return trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
     }
 }
+
+extension String {
+    func toURL() -> URL? {
+        URL(string: self)
+    }
+}

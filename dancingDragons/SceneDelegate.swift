@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         switch true {
         case true:
 //            let rootViewController = TabBarController()
-            let rootViewController = UINavigationController(rootViewController: ViewController())
+            let rootViewController = UINavigationController(rootViewController: AlbumsViewController(viewModel: AlbumsViewModel()))
             window?.rootViewController = rootViewController
             window?.windowScene = windowScene
             window?.makeKeyAndVisible()

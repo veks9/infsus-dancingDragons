@@ -33,7 +33,6 @@ class APIClient {
             AF.request(request)
                 .validate()
                 .responseDecodable(decoder: self.decoder) { (response: DataResponse<T.ResponseType, AFError>) in
-                    print("🔴🔴🔴🔴\(response)🔴🔴🔴🔴")
                     switch response.result {
                     case .success(let value):
                         single(.success(value))

@@ -1,5 +1,5 @@
 //
-//  FetchArtist.swift
+//  FetchArtistsByGenreRequest.swift
 //  dancingDragons
 //
 //  Created by Vedran Hernaus on 08.05.2022..
@@ -8,16 +8,17 @@
 import Foundation
 import Alamofire
 
-struct FetchArtistRequest: APIRequest {
-    typealias ResponseType = Model.ArtistResponse
+struct FetchArtistsByGenreRequest: APIRequest {
+    typealias ResponseType = [Model.ArtistResponse]
     
     var path: String {
-        return Endpoint.artist(artistId).path
+        return Endpoint.artistsByGenre(artistId).path
     }
-
-    let artistId: Int
+    
+    var artistId: Int
     var query: String?
     var httpMethod: HTTPMethod = .get
     var requestBody: Data?
     var authentificationType: AuthentificationType = .none
 }
+

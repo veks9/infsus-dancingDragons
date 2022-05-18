@@ -20,4 +20,8 @@ class AlbumService: AlbumServicing {
     func addSongsToAlbum(albumId: Int, songIds: [Int]) -> Observable<Model.AlbumResponse> {
         APIClient.shared.performRequest(AddSongsToAlbumRequest(albumId: albumId, songIds: songIds)).asObservable()
     }
+    
+    func getAlbums() -> Observable<[Model.AlbumResponse]> {
+        APIClient.shared.performRequest(FetchAlbumsRequest()).asObservable()
+    }
 }
