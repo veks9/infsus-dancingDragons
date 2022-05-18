@@ -18,6 +18,7 @@ class AlbumsViewController: UIViewController {
     private lazy var albumsTableView: UITableView = {
         let tableView = UITableView()
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.registerCell(AlbumCellView.self)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
@@ -71,6 +72,8 @@ class AlbumsViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDataSource
+
 extension AlbumsViewController: UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
       return viewModel.dataSource.count
@@ -85,4 +88,12 @@ extension AlbumsViewController: UITableViewDataSource {
           return cell
           }
   }
+}
+
+// MARK: - UITableViewDelegate
+
+extension AlbumsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
 }

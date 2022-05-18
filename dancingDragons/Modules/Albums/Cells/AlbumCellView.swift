@@ -46,7 +46,7 @@ class AlbumCellView: UITableViewCell {
         coverImageView.snp.remakeConstraints {
             $0.leading.equalToSuperview().offset(16)
             $0.centerY.equalToSuperview()
-            $0.width.height.equalTo(30)
+            $0.width.height.equalTo(40)
         }
         
         titleLabel.snp.remakeConstraints {
