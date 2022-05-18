@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		074F7407B8A57F6F8DA24225 /* Pods_dancingDragons.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9ABCE6B8D13C3021EE6EAB17 /* Pods_dancingDragons.framework */; };
+		5A14D50A28356A5F00E1D5E1 /* AlbumDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14D50928356A5F00E1D5E1 /* AlbumDetailsViewController.swift */; };
+		5A14D50F28356AA200E1D5E1 /* AlbumDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14D50E28356AA200E1D5E1 /* AlbumDetailsView.swift */; };
+		5A14D51128356AB000E1D5E1 /* AlbumDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14D51028356AB000E1D5E1 /* AlbumDetailsViewModel.swift */; };
 		71569D5828354BAE0084BC04 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71569D5728354BAE0084BC04 /* UIImageView+.swift */; };
 		715E7DAF282C432D0012E4BD /* ArtistBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715E7DAE282C432D0012E4BD /* ArtistBody.swift */; };
 		71AFC54C2834DB72006C2A54 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFC54B2834DB72006C2A54 /* AlbumsViewController.swift */; };
@@ -73,6 +76,9 @@
 
 /* Begin PBXFileReference section */
 		3EAF12067C3B8E6D6CB3545D /* Pods-dancingDragons.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dancingDragons.release.xcconfig"; path = "Target Support Files/Pods-dancingDragons/Pods-dancingDragons.release.xcconfig"; sourceTree = "<group>"; };
+		5A14D50928356A5F00E1D5E1 /* AlbumDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewController.swift; sourceTree = "<group>"; };
+		5A14D50E28356AA200E1D5E1 /* AlbumDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsView.swift; sourceTree = "<group>"; };
+		5A14D51028356AB000E1D5E1 /* AlbumDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewModel.swift; sourceTree = "<group>"; };
 		6ED906889AF8439AE1B8B0B9 /* Pods-dancingDragons.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dancingDragons.debug.xcconfig"; path = "Target Support Files/Pods-dancingDragons/Pods-dancingDragons.debug.xcconfig"; sourceTree = "<group>"; };
 		71569D5728354BAE0084BC04 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		715E7DAE282C432D0012E4BD /* ArtistBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistBody.swift; sourceTree = "<group>"; };
@@ -152,6 +158,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A14D50828356A3A00E1D5E1 /* AlbumDetails */ = {
+			isa = PBXGroup;
+			children = (
+				5A14D50928356A5F00E1D5E1 /* AlbumDetailsViewController.swift */,
+			);
+			path = AlbumDetails;
+			sourceTree = "<group>";
+		};
+		5A14D50D28356A8B00E1D5E1 /* AlbumDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				5A14D50E28356AA200E1D5E1 /* AlbumDetailsView.swift */,
+				5A14D51028356AB000E1D5E1 /* AlbumDetailsViewModel.swift */,
+			);
+			path = AlbumDetailsView;
+			sourceTree = "<group>";
+		};
 		6685FF005CFDEB86E2D14FBF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,6 +375,7 @@
 		71EEDF50282702BB00F0C07F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5A14D50D28356A8B00E1D5E1 /* AlbumDetailsView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -417,6 +441,7 @@
 		71EEDF8E282807DF00F0C07F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5A14D50828356A3A00E1D5E1 /* AlbumDetails */,
 				71AFC54A2834DACE006C2A54 /* Albums */,
 			);
 			path = Modules;
@@ -581,9 +606,11 @@
 				71E867A328285E77004BCBCF /* AgentServicing.swift in Sources */,
 				71EEDF55282702F900F0C07F /* APIRequest.swift in Sources */,
 				71EEDF5D2827ABBB00F0C07F /* UIColor+.swift in Sources */,
+				5A14D51128356AB000E1D5E1 /* AlbumDetailsViewModel.swift in Sources */,
 				71EEDF652827AC1800F0C07F /* UITextField+.swift in Sources */,
 				71BEF140282AACC90016544E /* SongResponse.swift in Sources */,
 				71BEF144282AC8CE0016544E /* Encodable+.swift in Sources */,
+				5A14D50A28356A5F00E1D5E1 /* AlbumDetailsViewController.swift in Sources */,
 				71EEDF37282660F400F0C07F /* ViewController.swift in Sources */,
 				71E867A128285E6D004BCBCF /* UserService.swift in Sources */,
 				71EEDF692827AC3A00F0C07F /* UIScreen+.swift in Sources */,
@@ -615,6 +642,7 @@
 				71EEDF862827FAF200F0C07F /* DeleteArtistRequest.swift in Sources */,
 				71E867A828285EE9004BCBCF /* FetchUserRequest.swift in Sources */,
 				71AFC55028352375006C2A54 /* FetchAlbumsRequest.swift in Sources */,
+				5A14D50F28356AA200E1D5E1 /* AlbumDetailsView.swift in Sources */,
 				71AFC5552835294A006C2A54 /* AlbumCellViewModel.swift in Sources */,
 				71E8679E28285E02004BCBCF /* UserResponse.swift in Sources */,
 				71EEDF6F2827AC8000F0C07F /* UIButton+.swift in Sources */,
@@ -767,6 +795,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -795,6 +824,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

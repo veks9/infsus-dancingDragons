@@ -14,7 +14,7 @@ class AlbumsViewController: UIViewController {
     private let disposeBag = DisposeBag()
     
     // MARK: - Views
-
+    
     private lazy var albumsTableView: UITableView = {
         let tableView = UITableView()
         tableView.dataSource = self
@@ -75,25 +75,28 @@ class AlbumsViewController: UIViewController {
 // MARK: - UITableViewDataSource
 
 extension AlbumsViewController: UITableViewDataSource {
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-      return viewModel.dataSource.count
-  }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.dataSource.count
+    }
     
-  func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      switch viewModel.dataSource[indexPath.row] {
-          case .album(let viewModel):
-          let cell: AlbumCellView = tableView.dequeueCellAtIndexPath(indexPath: indexPath)
-          cell.updateUI(viewModel: viewModel)
-          
-          return cell
-          }
-  }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch viewModel.dataSource[indexPath.row] {
+        case .album(let viewModel):
+            let cell: AlbumCellView = tableView.dequeueCellAtIndexPath(indexPath: indexPath)
+            cell.updateUI(viewModel: viewModel)
+            
+            return cell
+        }
+    }
 }
 
 // MARK: - UITableViewDelegate
 
 extension AlbumsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        switch viewModel.dataSource[indexPath.row] {
+        case .album(let viewModel):
+            present(AlbumDetailsViewController(albumName: viewModel.title, cover: viewModel.image ?? ""), animated: true, completion: nil)
+        }
     }
 }
