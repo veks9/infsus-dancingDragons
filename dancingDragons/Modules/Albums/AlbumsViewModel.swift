@@ -25,7 +25,7 @@ class AlbumsViewModel {
             .subscribe(onNext: { [weak self] albums in
                 guard let self = self else { return }
                 self.dataSource = albums.map { album in
-                    AlbumCellType.album(AlbumCellViewModel(image: album.coverImage, title: album.title))
+                    AlbumCellType.album(AlbumCellViewModel(id: album.id, image: album.coverImage, title: album.title, year: album.year))
                 }
                 self.tableViewReloadRelay.accept(())
             })

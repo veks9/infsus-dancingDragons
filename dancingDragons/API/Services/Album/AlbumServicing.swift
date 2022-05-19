@@ -13,4 +13,5 @@ protocol AlbumServicing {
     func createAlbum(album: Model.AlbumBody) -> Observable<Model.AlbumResponse>
     func addSongsToAlbum(albumId: Int, songIds: [Int]) -> Observable<Model.AlbumResponse>
     func getAlbums() -> Observable<[Model.AlbumResponse]>
+    func getAlbum(with id: Int) -> Observable<Model.AlbumResponse>
 }

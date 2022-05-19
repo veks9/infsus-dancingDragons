@@ -11,6 +11,12 @@
 		5A14D50A28356A5F00E1D5E1 /* AlbumDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14D50928356A5F00E1D5E1 /* AlbumDetailsViewController.swift */; };
 		5A14D50F28356AA200E1D5E1 /* AlbumDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14D50E28356AA200E1D5E1 /* AlbumDetailsView.swift */; };
 		5A14D51128356AB000E1D5E1 /* AlbumDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14D51028356AB000E1D5E1 /* AlbumDetailsViewModel.swift */; };
+		5A14D51628366AA400E1D5E1 /* SongsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14D51528366AA400E1D5E1 /* SongsViewController.swift */; };
+		5A14D51828366B1900E1D5E1 /* SongsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14D51728366B1900E1D5E1 /* SongsViewModel.swift */; };
+		5A14D51B28366C6E00E1D5E1 /* SongCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14D51A28366C6E00E1D5E1 /* SongCellView.swift */; };
+		5A14D51D28366C7A00E1D5E1 /* SongCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14D51C28366C7A00E1D5E1 /* SongCellViewModel.swift */; };
+		5A14D51F28366F1100E1D5E1 /* FetchSongsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14D51E28366F1100E1D5E1 /* FetchSongsRequest.swift */; };
+		5A14D521283673BE00E1D5E1 /* FetchAlbumRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14D520283673BE00E1D5E1 /* FetchAlbumRequest.swift */; };
 		71569D5828354BAE0084BC04 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71569D5728354BAE0084BC04 /* UIImageView+.swift */; };
 		715E7DAF282C432D0012E4BD /* ArtistBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715E7DAE282C432D0012E4BD /* ArtistBody.swift */; };
 		71AFC54C2834DB72006C2A54 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFC54B2834DB72006C2A54 /* AlbumsViewController.swift */; };
@@ -79,6 +85,12 @@
 		5A14D50928356A5F00E1D5E1 /* AlbumDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewController.swift; sourceTree = "<group>"; };
 		5A14D50E28356AA200E1D5E1 /* AlbumDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsView.swift; sourceTree = "<group>"; };
 		5A14D51028356AB000E1D5E1 /* AlbumDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewModel.swift; sourceTree = "<group>"; };
+		5A14D51528366AA400E1D5E1 /* SongsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsViewController.swift; sourceTree = "<group>"; };
+		5A14D51728366B1900E1D5E1 /* SongsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsViewModel.swift; sourceTree = "<group>"; };
+		5A14D51A28366C6E00E1D5E1 /* SongCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCellView.swift; sourceTree = "<group>"; };
+		5A14D51C28366C7A00E1D5E1 /* SongCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongCellViewModel.swift; sourceTree = "<group>"; };
+		5A14D51E28366F1100E1D5E1 /* FetchSongsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchSongsRequest.swift; sourceTree = "<group>"; };
+		5A14D520283673BE00E1D5E1 /* FetchAlbumRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAlbumRequest.swift; sourceTree = "<group>"; };
 		6ED906889AF8439AE1B8B0B9 /* Pods-dancingDragons.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dancingDragons.debug.xcconfig"; path = "Target Support Files/Pods-dancingDragons/Pods-dancingDragons.debug.xcconfig"; sourceTree = "<group>"; };
 		71569D5728354BAE0084BC04 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		715E7DAE282C432D0012E4BD /* ArtistBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistBody.swift; sourceTree = "<group>"; };
@@ -175,6 +187,25 @@
 			path = AlbumDetailsView;
 			sourceTree = "<group>";
 		};
+		5A14D51428366A8D00E1D5E1 /* Songs */ = {
+			isa = PBXGroup;
+			children = (
+				5A14D51928366BAC00E1D5E1 /* Cells */,
+				5A14D51528366AA400E1D5E1 /* SongsViewController.swift */,
+				5A14D51728366B1900E1D5E1 /* SongsViewModel.swift */,
+			);
+			path = Songs;
+			sourceTree = "<group>";
+		};
+		5A14D51928366BAC00E1D5E1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5A14D51A28366C6E00E1D5E1 /* SongCellView.swift */,
+				5A14D51C28366C7A00E1D5E1 /* SongCellViewModel.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		6685FF005CFDEB86E2D14FBF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -220,6 +251,7 @@
 				71BEF141282AC7960016544E /* CreateAlbumRequest.swift */,
 				71BEF155282B0D450016544E /* AddSongsToAlbumRequest.swift */,
 				71AFC54F28352375006C2A54 /* FetchAlbumsRequest.swift */,
+				5A14D520283673BE00E1D5E1 /* FetchAlbumRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -238,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				71BEF14D282ACD180016544E /* CreateSongRequest.swift */,
+				5A14D51E28366F1100E1D5E1 /* FetchSongsRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -441,6 +474,7 @@
 		71EEDF8E282807DF00F0C07F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				5A14D51428366A8D00E1D5E1 /* Songs */,
 				5A14D50828356A3A00E1D5E1 /* AlbumDetails */,
 				71AFC54A2834DACE006C2A54 /* Albums */,
 			);
@@ -592,6 +626,7 @@
 				71E867A528285E7D004BCBCF /* UserServicing.swift in Sources */,
 				71EEDF9128281E9B00F0C07F /* AgentService.swift in Sources */,
 				71EEDF792827F9D800F0C07F /* ArtistServicing.swift in Sources */,
+				5A14D51828366B1900E1D5E1 /* SongsViewModel.swift in Sources */,
 				71AFC553283528F5006C2A54 /* AlbumCellView.swift in Sources */,
 				71569D5828354BAE0084BC04 /* UIImageView+.swift in Sources */,
 				71EEDF762827F86900F0C07F /* ArtistService.swift in Sources */,
@@ -600,6 +635,7 @@
 				71BEF154282AD05F0016544E /* AlbumBody.swift in Sources */,
 				71EEDF632827ABFD00F0C07F /* UIView+.swift in Sources */,
 				71EEDF672827AC2900F0C07F /* UIDevice+.swift in Sources */,
+				5A14D51F28366F1100E1D5E1 /* FetchSongsRequest.swift in Sources */,
 				71BEF149282ACC3A0016544E /* SongService.swift in Sources */,
 				71EEDF4D2827028A00F0C07F /* Model.swift in Sources */,
 				71EEDF882827FB2200F0C07F /* AddAlbumToArtistRequest.swift in Sources */,
@@ -607,11 +643,13 @@
 				71EEDF55282702F900F0C07F /* APIRequest.swift in Sources */,
 				71EEDF5D2827ABBB00F0C07F /* UIColor+.swift in Sources */,
 				5A14D51128356AB000E1D5E1 /* AlbumDetailsViewModel.swift in Sources */,
+				5A14D521283673BE00E1D5E1 /* FetchAlbumRequest.swift in Sources */,
 				71EEDF652827AC1800F0C07F /* UITextField+.swift in Sources */,
 				71BEF140282AACC90016544E /* SongResponse.swift in Sources */,
 				71BEF144282AC8CE0016544E /* Encodable+.swift in Sources */,
 				5A14D50A28356A5F00E1D5E1 /* AlbumDetailsViewController.swift in Sources */,
 				71EEDF37282660F400F0C07F /* ViewController.swift in Sources */,
+				5A14D51B28366C6E00E1D5E1 /* SongCellView.swift in Sources */,
 				71E867A128285E6D004BCBCF /* UserService.swift in Sources */,
 				71EEDF692827AC3A00F0C07F /* UIScreen+.swift in Sources */,
 				71EEDF5F2827ABD600F0C07F /* UILabel+.swift in Sources */,
@@ -642,9 +680,11 @@
 				71EEDF862827FAF200F0C07F /* DeleteArtistRequest.swift in Sources */,
 				71E867A828285EE9004BCBCF /* FetchUserRequest.swift in Sources */,
 				71AFC55028352375006C2A54 /* FetchAlbumsRequest.swift in Sources */,
+				5A14D51628366AA400E1D5E1 /* SongsViewController.swift in Sources */,
 				5A14D50F28356AA200E1D5E1 /* AlbumDetailsView.swift in Sources */,
 				71AFC5552835294A006C2A54 /* AlbumCellViewModel.swift in Sources */,
 				71E8679E28285E02004BCBCF /* UserResponse.swift in Sources */,
+				5A14D51D28366C7A00E1D5E1 /* SongCellViewModel.swift in Sources */,
 				71EEDF6F2827AC8000F0C07F /* UIButton+.swift in Sources */,
 				71EEDF8D2827FF3700F0C07F /* ArtistResponse.swift in Sources */,
 				71BEF152282AD0590016544E /* SongBody.swift in Sources */,

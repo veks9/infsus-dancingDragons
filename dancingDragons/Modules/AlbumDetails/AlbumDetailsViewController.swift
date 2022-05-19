@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 
 class AlbumDetailsViewController: UIViewController {
+    var viewModel: AlbumDetailsViewModel
     private let disposeBag = DisposeBag()
         
     // MARK: - Views
@@ -18,14 +19,20 @@ class AlbumDetailsViewController: UIViewController {
     
     
     // MARK: - Lifecycle
-    init(albumName: String, cover: String) {
+    init(viewModel: AlbumDetailsViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
         self.albumView = AlbumDetailsView()
-        self.albumView.updateUI(viewModel: AlbumDetailsViewModel(title: albumName, cover: cover)) 
+        self.albumView.updateUI(viewModel: viewModel)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.fetch(id: viewModel.id) 
     }
     
     override func viewDidLoad() {

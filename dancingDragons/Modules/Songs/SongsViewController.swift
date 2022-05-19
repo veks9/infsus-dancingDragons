@@ -1,24 +1,24 @@
 //
-//  AlbumsViewController.swift
+//  SongsViewController.swift
 //  dancingDragons
 //
-//  Created by Vedran Hernaus on 18.05.2022..
+//  Created by Luka Bokarica on 19.05.2022..
 //
 
 import UIKit
 import SnapKit
 import RxSwift
 
-class AlbumsViewController: UIViewController {
-    let viewModel: AlbumsViewModel
+class SongsViewController: UIViewController {
+    let viewModel: SongsViewModel
     private let disposeBag = DisposeBag()
     
     // MARK: - Views
-    private lazy var albumsTableView: UITableView = {
+    private lazy var songsTableView: UITableView = {
         let tableView = UITableView()
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.registerCell(AlbumCellView.self)
+        tableView.registerCell(SongCellView.self)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = UITableView.automaticDimension
         
@@ -27,7 +27,7 @@ class AlbumsViewController: UIViewController {
     
     // MARK: - Lifecycle
     
-    init(viewModel: AlbumsViewModel) {
+    init(viewModel: SongsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -46,16 +46,16 @@ class AlbumsViewController: UIViewController {
         addSubviews()
         setConstraints()
         observe()
-        title = "Albums"
+        title = "Songs"
         view.backgroundColor = .appWhite
     }
     
     private func addSubviews() {
-        view.addSubview(albumsTableView)
+        view.addSubview(songsTableView)
     }
     
     private func setConstraints() {
-        albumsTableView.snp.remakeConstraints {
+        songsTableView.snp.remakeConstraints {
             $0.edges.equalToSuperview()
         }
     }
@@ -64,7 +64,7 @@ class AlbumsViewController: UIViewController {
         viewModel.tableViewReloadRelay
             .subscribe(onNext: { [weak self] _ in
                 guard let self = self else { return }
-                self.albumsTableView.reloadData()
+                self.songsTableView.reloadData()
             })
             .disposed(by: disposeBag)
     }
@@ -72,28 +72,39 @@ class AlbumsViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 
-extension AlbumsViewController: UITableViewDataSource {
+extension SongsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.dataSource.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch viewModel.dataSource[indexPath.row] {
-        case .album(let viewModel):
-            let cell: AlbumCellView = tableView.dequeueCellAtIndexPath(indexPath: indexPath)
+        case .song(let viewModel):
+            let cell: SongCellView = tableView.dequeueCellAtIndexPath(indexPath: indexPath)
             cell.updateUI(viewModel: viewModel)
-            
+
             return cell
         }
     }
-}
-// MARK: - UITableViewDelegate
 
-extension AlbumsViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch viewModel.dataSource[indexPath.row] {
-        case .album(let viewModel):
-            present(AlbumDetailsViewController(viewModel: AlbumDetailsViewModel(id: viewModel.id, title: viewModel.title, year: viewModel.year, cover: viewModel.image)), animated: true, completion: nil)
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            // handle delete (by removing the data from your array and updating the tableview)
         }
     }
+}
+
+// MARK: - UITableViewDelegate
+
+extension SongsViewController: UITableViewDelegate {
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        switch viewModel.dataSource[indexPath.row] {
+//        case .song(let viewModel):
+//            present(AlbumDetailsViewController(viewModel: AlbumDetailsViewModel(id: viewModel.id, title: viewModel.title, year: viewModel.year, cover: viewModel.image)), animated: true, completion: nil)
+//        }
+//    }
 }

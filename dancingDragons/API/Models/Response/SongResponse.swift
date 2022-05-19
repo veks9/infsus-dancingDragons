@@ -12,7 +12,7 @@ extension Model {
         let _id: String
         let id: Int
         let albumId: Int?
-        let artistsIds: [Int]
+        let artistIds: [Int]
         let title: String
         let version: Int?
         
@@ -20,7 +20,7 @@ extension Model {
             case _id
             case id
             case albumId
-            case artistsIds
+            case artistIds
             case title
             case version = "__v"
         }

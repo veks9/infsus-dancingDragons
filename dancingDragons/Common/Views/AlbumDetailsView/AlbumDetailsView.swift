@@ -14,11 +14,12 @@ class AlbumDetailsView: UIView {
     // MARK: - Views
     private lazy var imageView: UIImageView = {
         let view = UIImageView()
+        view.contentMode = .scaleAspectFit
         
         return view
     }()
     
-    private lazy var titleLabel: UILabel = {
+    private lazy var albumNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .appBlack
         label.textAlignment = .left
@@ -27,10 +28,11 @@ class AlbumDetailsView: UIView {
         return label
     }()
     
-    private lazy var smallLabel: UILabel = {
+    private lazy var yearLabel: UILabel = {
         let label = UILabel()
         label.textColor = .appBlack
         label.textAlignment = .left
+        label.font = label.font.withSize(25)
         
         return label
     }()
@@ -51,8 +53,8 @@ class AlbumDetailsView: UIView {
     // MARK: - Lifecycle
     private func addSubviews() {
         self.addSubview(imageView)
-        self.addSubview(titleLabel)
-//        self.addSubview(smallLabel)
+        self.addSubview(albumNameLabel)
+        self.addSubview(yearLabel)
     }
     
     private func setConstraints() {
@@ -62,22 +64,23 @@ class AlbumDetailsView: UIView {
             $0.height.equalTo(400)
         }
 
-        titleLabel.snp.remakeConstraints {
+        albumNameLabel.snp.remakeConstraints {
             $0.top.equalTo(imageView.snp.bottom).offset(10)
-            $0.height.equalTo(80)
             $0.leading.trailing.equalToSuperview().offset(10)
+            $0.height.equalTo(50)
         }
-//
-//        smallLabel.snp.remakeConstraints {
-//            $0.height.equalTo(30)
-//            $0.leading.trailing.equalToSuperview().offset(10)
-//        }
+
+        yearLabel.snp.remakeConstraints {
+            $0.top.equalTo(albumNameLabel.snp.bottom).offset(10)
+            $0.leading.trailing.equalToSuperview().offset(10)
+            $0.height.equalTo(20)
+        }
     }
     
     func updateUI(viewModel: AlbumDetailsViewModel) {
         self.viewModel = viewModel
-        self.titleLabel.text = viewModel.title
+        self.albumNameLabel.text = viewModel.title
         self.imageView.setImage(viewModel.cover)
-//        self.smallLabel.text = viewModel.year
+        self.yearLabel.text = viewModel.year
     }
 }
