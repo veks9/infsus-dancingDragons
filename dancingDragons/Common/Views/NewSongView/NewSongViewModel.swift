@@ -17,17 +17,14 @@ class NewSongViewModel {
 
     let id: Int
     let title: String
-    let artistIds: [Int]
     let albumId: Int
     
     init(id: Int,
          title: String,
-         artistIds: [Int],
          albumId: Int
     ){
         self.id = id
         self.title = title
-        self.artistIds = artistIds
         self.albumId = albumId
         self.albums = []
         self.albumService = AlbumService()

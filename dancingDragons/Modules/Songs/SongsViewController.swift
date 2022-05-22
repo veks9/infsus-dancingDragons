@@ -87,8 +87,8 @@ class SongsViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
-    @objc func newSong() {
-        present(NewSongViewController(viewModel: NewSongViewModel(id: 0, title: "", artistIds: [], albumId: 0)), animated: true, completion: nil)
+    @objc func showSongDetails() {
+        present(NewSongViewController(viewModel: NewSongViewModel(id: 0, title: "", albumId: 0)), animated: true, completion: nil)
     }
 }
 

@@ -47,6 +47,7 @@
 		71E867A328285E77004BCBCF /* AgentServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E867A228285E77004BCBCF /* AgentServicing.swift */; };
 		71E867A528285E7D004BCBCF /* UserServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E867A428285E7D004BCBCF /* UserServicing.swift */; };
 		71E867A828285EE9004BCBCF /* FetchUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E867A728285EE9004BCBCF /* FetchUserRequest.swift */; };
+		71EC614F283A8BD000A925D3 /* UpdateSongRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EC614E283A8BD000A925D3 /* UpdateSongRequest.swift */; };
 		71EEDF33282660F400F0C07F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EEDF32282660F400F0C07F /* AppDelegate.swift */; };
 		71EEDF35282660F400F0C07F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EEDF34282660F400F0C07F /* SceneDelegate.swift */; };
 		71EEDF37282660F400F0C07F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EEDF36282660F400F0C07F /* ViewController.swift */; };
@@ -128,6 +129,7 @@
 		71E867A228285E77004BCBCF /* AgentServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentServicing.swift; sourceTree = "<group>"; };
 		71E867A428285E7D004BCBCF /* UserServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServicing.swift; sourceTree = "<group>"; };
 		71E867A728285EE9004BCBCF /* FetchUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchUserRequest.swift; sourceTree = "<group>"; };
+		71EC614E283A8BD000A925D3 /* UpdateSongRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateSongRequest.swift; sourceTree = "<group>"; };
 		71EEDF2F282660F400F0C07F /* dancingDragons.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dancingDragons.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71EEDF32282660F400F0C07F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71EEDF34282660F400F0C07F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -319,6 +321,7 @@
 				71BEF14D282ACD180016544E /* CreateSongRequest.swift */,
 				5A14D51E28366F1100E1D5E1 /* FetchSongsRequest.swift */,
 				71D357B0283A77550072C545 /* DeleteSongRequest.swift */,
+				71EC614E283A8BD000A925D3 /* UpdateSongRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71BEF13B282AAC840016544E /* AlbumServicing.swift in Sources */,
+				71EC614F283A8BD000A925D3 /* UpdateSongRequest.swift in Sources */,
 				71EEDF572827031100F0C07F /* NetworkConstants.swift in Sources */,
 				71E867A528285E7D004BCBCF /* UserServicing.swift in Sources */,
 				71EEDF9128281E9B00F0C07F /* AgentService.swift in Sources */,
@@ -889,6 +893,7 @@
 				INFOPLIST_FILE = dancingDragons/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
@@ -918,6 +923,7 @@
 				INFOPLIST_FILE = dancingDragons/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
