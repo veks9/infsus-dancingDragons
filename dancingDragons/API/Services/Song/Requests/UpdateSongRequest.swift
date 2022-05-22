@@ -15,9 +15,12 @@ struct UpdateSongRequest: APIRequest {
     }
     
     let songId: Int
+    var songBody: Model.SongBody
     var query: String?
     var httpMethod: HTTPMethod = .post
-    var requestBody: Data?
+    var requestBody: Data? {
+        songBody.data
+    }
     var authentificationType: AuthentificationType = .none
 }
 

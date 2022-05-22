@@ -47,6 +47,7 @@ class SongsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.fetch()
+        viewModel.updateSong(with: 1, song: Model.SongBody(title: "Proba promjena titlea"))
     }
     
     override func viewDidLoad() {

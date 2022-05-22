@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import RxRelay
+import CloudKit
 
 class SongsViewModel {
     private let songService: SongServicing
@@ -55,6 +56,15 @@ class SongsViewModel {
                         return viewModel.id == id
                     }
                 }
+                self.tableViewReloadRelay.accept(())
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func updateSong(with id: Int, song: Model.SongBody) {
+        songService.updateSong(with: id, song: song)
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
                 self.tableViewReloadRelay.accept(())
             })
             .disposed(by: disposeBag)
