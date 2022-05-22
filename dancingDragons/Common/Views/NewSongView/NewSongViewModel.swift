@@ -2,7 +2,7 @@
 //  NewSongViewModel.swift
 //  dancingDragons
 //
-//  Created by Pero Bokarica on 22.05.2022..
+//  Created by Luka Bokarica on 22.05.2022..
 //
 
 import Foundation

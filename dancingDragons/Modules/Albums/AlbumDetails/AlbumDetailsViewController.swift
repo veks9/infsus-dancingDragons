@@ -2,7 +2,7 @@
 //  AlbumDetailsViewController.swift
 //  dancingDragons
 //
-//  Created by Pero Bokarica on 18.05.2022..
+//  Created by Luka Bokarica on 18.05.2022..
 //
 
 import Foundation
