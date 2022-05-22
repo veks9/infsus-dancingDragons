@@ -88,7 +88,7 @@ class SongsViewController: UIViewController {
     }
     
     @objc func showSongDetails() {
-        present(NewSongViewController(viewModel: NewSongViewModel(id: 0, title: "", artistIds: [], albumId: 0)), animated: true, completion: nil)
+        present(NewSongViewController(viewModel: NewSongViewModel(id: 0, title: "", albumId: 0)), animated: true, completion: nil)
     }
 }
 

@@ -37,7 +37,6 @@ class SongsViewModel {
                     SongCellType.song(SongCellViewModel(id: song.id,
                                                         title: song.title,
                                                         albumCover: "",
-                                                        artistIds: song.artistIds,
                                                         albumId: song.albumId))
                 }
                 self.filteredData = self.dataSource
