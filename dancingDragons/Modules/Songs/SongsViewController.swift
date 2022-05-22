@@ -47,7 +47,7 @@ class SongsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.fetch()
-        viewModel.updateSong(with: 1, song: Model.SongBody(title: "Proba promjena titlea"))
+        songsTableView.reloadData()
     }
     
     override func viewDidLoad() {
@@ -86,10 +86,19 @@ class SongsViewController: UIViewController {
                 self.songsTableView.reloadData()
             })
             .disposed(by: disposeBag)
+        
+        viewModel.fetchRelay
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.viewModel.fetch()
+            })
+            .disposed(by: disposeBag)
     }
     
     @objc func showSongDetails() {
-        present(NewSongViewController(viewModel: NewSongViewModel(id: 0, title: "", albumId: 0)), animated: true, completion: nil)
+        let viewController = NewSongViewController(viewModel: NewSongViewModel(id: 0, title: "", albumId: 0, newSongScreenType: .create))
+        viewController.modalPresentationStyle = .fullScreen
+        present(viewController, animated: true, completion: nil)
     }
 }
 
@@ -129,7 +138,9 @@ extension SongsViewController: UITableViewDataSource {
         let closeAction = UIContextualAction(style: .normal, title:  "Update", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
             switch self.viewModel.filteredData[indexPath.row] {
             case .song(let viewModel):
-                self.present(NewSongViewController(viewModel: NewSongViewModel(id: viewModel.id, title: viewModel.title, albumId: viewModel.albumId ?? 0)), animated: true) 
+                let viewController = NewSongViewController(viewModel: NewSongViewModel(id: viewModel.id, title: viewModel.title, albumId: viewModel.albumId ?? 0, newSongScreenType: .update))
+                viewController.modalPresentationStyle = .fullScreen
+                self.present(viewController, animated: true)
             }
             success(true)
         })

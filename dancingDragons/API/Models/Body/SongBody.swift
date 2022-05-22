@@ -10,9 +10,11 @@ import Foundation
 extension Model {
     struct SongBody: Codable, Hashable {
         let title: String
+        let albumId: Int
         
         enum CodingKeys: String, CodingKey {
             case title
+            case albumId
         }
     }
 }

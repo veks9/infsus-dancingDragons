@@ -53,5 +53,31 @@ class NewSongViewController: UIViewController {
     }
     
     private func observe() {
+        newSongView.confirmButton
+            .rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                let albumName = self.newSongView.albumButton.titleLabel?.text
+                let albumId = self.viewModel.albums.first { tuple in
+                    albumName == tuple.0
+                }?.1
+                switch self.viewModel.newSongScreenType {
+                case .create:
+                    self.viewModel.createSong(title: self.newSongView.songTitleField.text, albumId: albumId ?? self.viewModel.albumId)
+                        .subscribe(onNext: { [weak self] _ in
+                            guard let self = self else { return }
+                            self.dismiss(animated: true)
+                        })
+                        .disposed(by: self.disposeBag)
+                case .update:
+                    self.viewModel.updateSong(title: self.newSongView.songTitleField.text, albumId: albumId ?? self.viewModel.albumId)
+                        .subscribe(onNext: { [weak self] _ in
+                            guard let self = self else { return }
+                            self.dismiss(animated: true)
+                        })
+                        .disposed(by: self.disposeBag)
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }

@@ -20,6 +20,7 @@ class SongsViewModel {
     var filteredData: [SongCellType] = []
     
     var tableViewReloadRelay = PublishRelay<Void>()
+    var fetchRelay = PublishRelay<Void>()
     
     init(
         songService: SongServicing = SongService(),
