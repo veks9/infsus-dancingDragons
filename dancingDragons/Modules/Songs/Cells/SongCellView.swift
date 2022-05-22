@@ -44,26 +44,25 @@ class SongCellView: UITableViewCell {
     }
     
     private func addSubviews() {
-//        addSubview(albumCoverImageView)
+        addSubview(albumCoverImageView)
         addSubview(titleLabel)
     }
     
     private func setConstraints() {
-//        albumCoverImageView.snp.remakeConstraints {
-//            $0.leading.equalToSuperview().offset(16)
-//            $0.centerY.equalToSuperview()
-//            $0.width.height.equalTo(40)
-//        }
+        albumCoverImageView.snp.remakeConstraints {
+            $0.leading.equalToSuperview().offset(16)
+            $0.centerY.equalToSuperview()
+            $0.width.height.equalTo(40)
+        }
         
         titleLabel.snp.remakeConstraints {
             $0.leading.trailing.equalToSuperview().offset(16)
-            //$0.trailing.equalToSuperview().offset(-16)
             $0.centerY.equalToSuperview()
         }
     }
     
     func updateUI(viewModel: SongCellViewModel) {
-        albumCoverImageView.setImage(viewModel.albumCover)
+//        albumCoverImageView.setImage(viewModel.fetchAlbumCover()) 
         titleLabel.text = viewModel.title
     }
 }

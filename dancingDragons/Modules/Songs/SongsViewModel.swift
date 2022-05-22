@@ -25,7 +25,7 @@ class SongsViewModel {
             .subscribe(onNext: { [weak self] songs in
                 guard let self = self else { return }
                 self.dataSource = songs.map { song in
-                    SongCellType.song(SongCellViewModel(id: song.id, title: song.title, albumCover: "", artistIds: song.artistIds))
+                    SongCellType.song(SongCellViewModel(id: song.id, title: song.title, albumId: song.albumId ?? 0, artistIds: song.artistIds))
                 }
                 self.tableViewReloadRelay.accept(())
             })

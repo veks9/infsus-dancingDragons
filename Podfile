@@ -5,7 +5,10 @@ target 'dancingDragons' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for where2go
+  #Pod for drop down list
+  pod 'DropDown'
+  
+  # Pods for dancingDragons
   pod 'SnapKit'
   pod 'Kingfisher'
   pod 'Alamofire'

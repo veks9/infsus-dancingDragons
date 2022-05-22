@@ -47,6 +47,8 @@ class SongsViewController: UIViewController {
         setConstraints()
         observe()
         title = "Songs"
+        let rightItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showSongDetails))
+        navigationItem.rightBarButtonItem = rightItem
         view.backgroundColor = .appWhite
     }
     
@@ -67,6 +69,10 @@ class SongsViewController: UIViewController {
                 self.songsTableView.reloadData()
             })
             .disposed(by: disposeBag)
+    }
+    
+    @objc func showSongDetails() {
+        present(NewSongViewController(viewModel: NewSongViewModel(id: 0, title: "", artistIds: [], albumId: 0)), animated: true, completion: nil)
     }
 }
 
@@ -101,10 +107,10 @@ extension SongsViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 
 extension SongsViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        switch viewModel.dataSource[indexPath.row] {
-//        case .song(let viewModel):
-//            present(AlbumDetailsViewController(viewModel: AlbumDetailsViewModel(id: viewModel.id, title: viewModel.title, year: viewModel.year, cover: viewModel.image)), animated: true, completion: nil)
-//        }
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        switch viewModel.dataSource[indexPath.row] {
+        case .song(let viewModel):
+            present(AlbumDetailsViewController(viewModel: AlbumDetailsViewModel(id: viewModel.id, title: viewModel.title, year: "", cover: "")), animated: true, completion: nil)
+        }
+    }
 }
