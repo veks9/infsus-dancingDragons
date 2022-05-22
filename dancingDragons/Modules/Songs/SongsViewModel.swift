@@ -32,7 +32,7 @@ class SongsViewModel {
         songService.getSongs()
             .subscribe(onNext: { [weak self] songs in
                 guard let self = self else { return }
-                var songs = songs.sorted(by: { $0.albumId ?? 0 < $1.albumId ?? 0 })
+                let songs = songs.sorted(by: { $0.albumId ?? 0 < $1.albumId ?? 0 })
                 self.dataSource = songs.map { song in
                     SongCellType.song(SongCellViewModel(id: song.id,
                                                         title: song.title,
@@ -41,6 +41,21 @@ class SongsViewModel {
                                                         albumId: song.albumId))
                 }
                 self.filteredData = self.dataSource
+                self.tableViewReloadRelay.accept(())
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func deleteSong(with id: Int) {
+        songService.deleteSong(with: id)
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                self.dataSource.removeAll { songType in
+                    switch songType {
+                    case .song(let viewModel):
+                        return viewModel.id == id
+                    }
+                }
                 self.tableViewReloadRelay.accept(())
             })
             .disposed(by: disposeBag)
