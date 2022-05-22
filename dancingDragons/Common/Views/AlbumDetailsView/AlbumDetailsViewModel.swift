@@ -36,7 +36,7 @@ class AlbumDetailsViewModel {
         albumService.getSongsFromAlbum(with: id)
             .subscribe(onNext: { [weak self] songs in
 //                guard let self = self else { return }
-                print(songs)
+//                print(songs)
 //                self.dataSource = albums.map { album in
 //                    AlbumCellType.album(AlbumCellViewModel(image: album.coverImage, title: album.title, year: album.year))
 //                }

@@ -200,7 +200,6 @@
 		5A14D51428366A8D00E1D5E1 /* Songs */ = {
 			isa = PBXGroup;
 			children = (
-				5A14D528283A284100E1D5E1 /* SongDetails */,
 				5A14D5232837B0A200E1D5E1 /* NewSong */,
 				5A14D51928366BAC00E1D5E1 /* Cells */,
 				5A14D51528366AA400E1D5E1 /* SongsViewController.swift */,
@@ -224,13 +223,6 @@
 				5A14D5242837B0C300E1D5E1 /* NewSongViewController.swift */,
 			);
 			path = NewSong;
-			sourceTree = "<group>";
-		};
-		5A14D528283A284100E1D5E1 /* SongDetails */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = SongDetails;
 			sourceTree = "<group>";
 		};
 		5A14D529283A2D8400E1D5E1 /* NewSongView */ = {

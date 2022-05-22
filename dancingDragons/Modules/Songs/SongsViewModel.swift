@@ -16,6 +16,7 @@ class SongsViewModel {
     private let disposeBag = DisposeBag()
     
     var dataSource: [SongCellType] = []
+    var filteredData: [SongCellType] = []
     
     var tableViewReloadRelay = PublishRelay<Void>()
     
@@ -39,6 +40,7 @@ class SongsViewModel {
                                                         artistIds: song.artistIds,
                                                         albumId: song.albumId))
                 }
+                self.filteredData = self.dataSource
                 self.tableViewReloadRelay.accept(())
             })
             .disposed(by: disposeBag)

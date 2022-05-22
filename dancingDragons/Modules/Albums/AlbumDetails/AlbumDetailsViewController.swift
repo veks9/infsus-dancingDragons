@@ -32,7 +32,23 @@ class AlbumDetailsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.fetch(id: viewModel.id) 
+        viewModel.fetch(id: viewModel.id)
+        
+        // ako je pjesma!!!
+        if(viewModel.id == 0) {
+            fetchCoverImage(with: Int(viewModel.cover ?? ""))
+        }
+    }
+    
+    func fetchCoverImage(with id: Int?) {
+        if let id = id {
+            AlbumService().getAlbum(with: id)
+                .subscribe(onNext: { [weak self] album in
+                    guard let self = self else { return }
+                    self.albumView.getImage().setImage(album.coverImage)
+                })
+                .disposed(by: disposeBag)
+        }
     }
     
     override func viewDidLoad() {

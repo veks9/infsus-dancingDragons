@@ -83,4 +83,8 @@ class AlbumDetailsView: UIView {
         self.imageView.setImage(viewModel.cover)
         self.yearLabel.text = viewModel.year
     }
+    
+    func getImage() -> UIImageView {
+        return self.imageView
+    }
 }
