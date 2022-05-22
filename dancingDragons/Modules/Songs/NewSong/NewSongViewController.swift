@@ -70,7 +70,7 @@ class NewSongViewController: UIViewController {
                         })
                         .disposed(by: self.disposeBag)
                 case .update:
-                    self.viewModel.updateSong(title: self.newSongView.songTitleField.text, albumId: albumId ?? self.viewModel.albumId)
+                    self.viewModel.updateSong(title: self.newSongView.songTitleField.text, albumId: albumId ?? self.viewModel.albumId, oldAlbumId: self.viewModel.albumId)
                         .subscribe(onNext: { [weak self] _ in
                             guard let self = self else { return }
                             self.dismiss(animated: true)

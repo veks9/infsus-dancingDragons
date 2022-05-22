@@ -7,9 +7,11 @@
 
 import Foundation
 import UIKit
+import RxSwift
 
 class AlbumDetailsView: UIView {
     private var viewModel: AlbumDetailsViewModel?
+    private let disposeBag = DisposeBag()
     
     // MARK: - Views
     private lazy var imageView: UIImageView = {

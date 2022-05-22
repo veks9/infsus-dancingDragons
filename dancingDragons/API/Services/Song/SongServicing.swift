@@ -12,5 +12,5 @@ protocol SongServicing {
     func createSong(song: Model.SongBody) -> Observable<Model.SongResponse>
     func getSongs() -> Observable<[Model.SongResponse]>
     func deleteSong(with id: Int) -> Observable<String>
-    func updateSong(with id: Int, song: Model.SongBody) -> Observable<String>
+    func updateSong(with id: Int, song: Model.UpdateSongBody) -> Observable<String>
 }

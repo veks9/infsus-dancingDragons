@@ -12,8 +12,8 @@ import UIKit
 
 class NewSongViewModel {
     var albums: [(String, Int)]
-    let albumService: AlbumServicing
-    let songService: SongServicing
+    let albumsUseCase: AlbumsUseCase
+    let songsUseCase: SongsUseCase
     private let disposeBag = DisposeBag()
 
     let id: Int
@@ -30,14 +30,14 @@ class NewSongViewModel {
         self.title = title
         self.albumId = albumId
         self.albums = []
-        self.albumService = AlbumService()
-        self.songService = SongService()
+        self.albumsUseCase = AlbumsUseCase()
+        self.songsUseCase = SongsUseCase()
         self.newSongScreenType = newSongScreenType
         fetchAlbums()
     }
     
     func fetchAlbums() {
-        albumService.getAlbums()
+        albumsUseCase.fetch()
             .subscribe(onNext: { [weak self] albums in
                 guard let self = self else { return }
                 albums.forEach { album in
@@ -47,12 +47,12 @@ class NewSongViewModel {
             .disposed(by: disposeBag)
     }
     
-    func updateSong(title: String?, albumId: Int) -> Observable<String> {
-        songService.updateSong(with: id, song: Model.SongBody(title: title ?? "", albumId: albumId))
+    func updateSong(title: String?, albumId: Int, oldAlbumId: Int) -> Observable<String> {
+        songsUseCase.update(with: id, song: Model.UpdateSongBody(title: title ?? "", albumId: albumId, oldAlbumId: oldAlbumId))
     }
     
     func createSong(title: String?, albumId: Int) -> Observable<Model.SongResponse>{
-        songService.createSong(song: Model.SongBody(title: title ?? "", albumId: albumId))
+        songsUseCase.create(song: Model.SongBody(title: title ?? "", albumId: albumId))
     }
 }
 

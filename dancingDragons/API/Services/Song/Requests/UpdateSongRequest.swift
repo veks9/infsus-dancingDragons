@@ -15,7 +15,7 @@ struct UpdateSongRequest: APIRequest {
     }
     
     let songId: Int
-    var songBody: Model.SongBody
+    var songBody: Model.UpdateSongBody
     var query: String?
     var httpMethod: HTTPMethod = .post
     var requestBody: Data? {

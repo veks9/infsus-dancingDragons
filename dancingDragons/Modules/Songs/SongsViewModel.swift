@@ -12,8 +12,7 @@ import RxRelay
 import CloudKit
 
 class SongsViewModel {
-    private let songService: SongServicing
-    private let albumService: AlbumServicing
+    private let songsUseCase: SongsUseCase
     private let disposeBag = DisposeBag()
     
     var dataSource: [SongCellType] = []
@@ -23,15 +22,13 @@ class SongsViewModel {
     var fetchRelay = PublishRelay<Void>()
     
     init(
-        songService: SongServicing = SongService(),
-        albumService: AlbumServicing = AlbumService()
+        songsUseCase: SongsUseCase = SongsUseCase()
     ) {
-        self.songService = songService
-        self.albumService = albumService
+        self.songsUseCase = songsUseCase
     }
     
     func fetch() {
-        songService.getSongs()
+        songsUseCase.fetch()
             .subscribe(onNext: { [weak self] songs in
                 guard let self = self else { return }
                 let songs = songs.sorted(by: { $0.albumId ?? 0 < $1.albumId ?? 0 })
@@ -48,7 +45,7 @@ class SongsViewModel {
     }
     
     func deleteSong(with id: Int) {
-        songService.deleteSong(with: id)
+        songsUseCase.delete(with: id)
             .subscribe(onNext: { [weak self] _ in
                 guard let self = self else { return }
                 self.dataSource.removeAll { songType in
@@ -69,8 +66,8 @@ class SongsViewModel {
             .disposed(by: disposeBag)
     }
     
-    func updateSong(with id: Int, song: Model.SongBody) {
-        songService.updateSong(with: id, song: song)
+    func updateSong(with id: Int, song: Model.UpdateSongBody) {
+        songsUseCase.update(with: id, song: song)
             .subscribe(onNext: { [weak self] _ in
                 guard let self = self else { return }
                 self.tableViewReloadRelay.accept(())

@@ -19,6 +19,9 @@ class AlbumDetailsViewModel {
     let year: String
     let cover: String?
     
+    var dataSource: [SongCellType] = []
+    var tableViewReloadRelay = PublishRelay<Void>()
+
     init(id: Int,
          title: String,
          year: String,
@@ -32,15 +35,17 @@ class AlbumDetailsViewModel {
         self.albumService = albumService
     }
     
-    func fetch(id: Int) {
+    func fetch() {
         albumService.getSongsFromAlbum(with: id)
             .subscribe(onNext: { [weak self] songs in
-//                guard let self = self else { return }
-//                print(songs)
-//                self.dataSource = albums.map { album in
-//                    AlbumCellType.album(AlbumCellViewModel(image: album.coverImage, title: album.title, year: album.year))
-//                }
-//                self.tableViewReloadRelay.accept(())
+                guard let self = self else { return }
+                self.dataSource = songs.map { song in
+                    SongCellType.song(SongCellViewModel(id: song.id,
+                                                        title: song.title,
+                                                        albumCover: "",
+                                                        albumId: song.albumId))
+                }
+                self.tableViewReloadRelay.accept(())
             })
             .disposed(by: disposeBag)
     }

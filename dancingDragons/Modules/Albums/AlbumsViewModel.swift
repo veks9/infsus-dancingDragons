@@ -10,18 +10,18 @@ import RxSwift
 import RxRelay
 
 class AlbumsViewModel {
-    let albumService: AlbumServicing
+    let albumsUseCase: AlbumsUseCase
     private let disposeBag = DisposeBag()
     var dataSource: [AlbumCellType] = []
     
     var tableViewReloadRelay = PublishRelay<Void>()
     
-    init(albumService: AlbumServicing = AlbumService()) {
-        self.albumService = albumService
+    init(albumsUseCase: AlbumsUseCase = AlbumsUseCase()) {
+        self.albumsUseCase = albumsUseCase
     }
     
     func fetch() {
-        albumService.getAlbums()
+        albumsUseCase.fetch()
             .subscribe(onNext: { [weak self] albums in
                 guard let self = self else { return }
                 self.dataSource = albums.map { album in
