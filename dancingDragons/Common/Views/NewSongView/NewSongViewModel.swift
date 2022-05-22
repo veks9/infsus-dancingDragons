@@ -13,6 +13,7 @@ import UIKit
 class NewSongViewModel {
     var albums: [(String, Int)]
     let albumService: AlbumServicing
+    let songService: SongServicing
     private let disposeBag = DisposeBag()
 
     let id: Int
@@ -28,11 +29,8 @@ class NewSongViewModel {
         self.albumId = albumId
         self.albums = []
         self.albumService = AlbumService()
+        self.songService = SongService()
         fetchAlbums()
-    }
-    
-    func fetchArtists(id: Int) {
-        
     }
     
     func fetchAlbums() {
@@ -45,4 +43,13 @@ class NewSongViewModel {
             })
             .disposed(by: disposeBag)
     }
+    
+//    func updateSong() {
+//        songService.updateSong(song: new SongBody())()
+//            .subscribe(onNext: { [weak self] _ in
+//                guard let self = self else { return }
+//
+//            })
+//            .disposed(by: disposeBag)
+//    }
 }

@@ -55,7 +55,7 @@ class SongsViewController: UIViewController {
         setConstraints()
         observe()
         title = "Songs"
-        let rightItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newSong))
+        let rightItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showSongDetails))
         navigationItem.rightBarButtonItem = rightItem
         view.backgroundColor = .appWhite
     }
@@ -128,7 +128,7 @@ extension SongsViewController: UITableViewDataSource {
         let closeAction = UIContextualAction(style: .normal, title:  "Update", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
             switch self.viewModel.filteredData[indexPath.row] {
             case .song(let viewModel):
-                self.present(NewSongViewController(viewModel: NewSongViewModel(id: viewModel.id, title: viewModel.title, artistIds: [], albumId: viewModel.albumId ?? 0)), animated: true) 
+                self.present(NewSongViewController(viewModel: NewSongViewModel(id: viewModel.id, title: viewModel.title, albumId: viewModel.albumId ?? 0)), animated: true) 
             }
             success(true)
         })

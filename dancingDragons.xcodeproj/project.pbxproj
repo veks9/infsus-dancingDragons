@@ -22,6 +22,7 @@
 		5A14D52D283A2DB300E1D5E1 /* NewSongViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14D52C283A2DB300E1D5E1 /* NewSongViewModel.swift */; };
 		5A14D530283A2E8D00E1D5E1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14D52F283A2E8D00E1D5E1 /* CustomTextField.swift */; };
 		5A14D533283A333B00E1D5E1 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14D532283A333B00E1D5E1 /* CustomButton.swift */; };
+		5A14D53B283A9E9E00E1D5E1 /* dancingDragonsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A14D53A283A9E9E00E1D5E1 /* dancingDragonsTests.swift */; };
 		71569D5828354BAE0084BC04 /* UIImageView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71569D5728354BAE0084BC04 /* UIImageView+.swift */; };
 		715E7DAF282C432D0012E4BD /* ArtistBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 715E7DAE282C432D0012E4BD /* ArtistBody.swift */; };
 		71AFC54C2834DB72006C2A54 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71AFC54B2834DB72006C2A54 /* AlbumsViewController.swift */; };
@@ -87,6 +88,16 @@
 		71EEDF982828451D00F0C07F /* AlbumResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EEDF972828451D00F0C07F /* AlbumResponse.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5A14D53C283A9E9E00E1D5E1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 71EEDF27282660F400F0C07F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71EEDF2E282660F400F0C07F;
+			remoteInfo = dancingDragons;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		3EAF12067C3B8E6D6CB3545D /* Pods-dancingDragons.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dancingDragons.release.xcconfig"; path = "Target Support Files/Pods-dancingDragons/Pods-dancingDragons.release.xcconfig"; sourceTree = "<group>"; };
 		5A14D50928356A5F00E1D5E1 /* AlbumDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumDetailsViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +114,8 @@
 		5A14D52C283A2DB300E1D5E1 /* NewSongViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSongViewModel.swift; sourceTree = "<group>"; };
 		5A14D52F283A2E8D00E1D5E1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		5A14D532283A333B00E1D5E1 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		5A14D538283A9E9E00E1D5E1 /* dancingDragonsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = dancingDragonsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A14D53A283A9E9E00E1D5E1 /* dancingDragonsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dancingDragonsTests.swift; sourceTree = "<group>"; };
 		6ED906889AF8439AE1B8B0B9 /* Pods-dancingDragons.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dancingDragons.debug.xcconfig"; path = "Target Support Files/Pods-dancingDragons/Pods-dancingDragons.debug.xcconfig"; sourceTree = "<group>"; };
 		71569D5728354BAE0084BC04 /* UIImageView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+.swift"; sourceTree = "<group>"; };
 		715E7DAE282C432D0012E4BD /* ArtistBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistBody.swift; sourceTree = "<group>"; };
@@ -173,6 +186,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5A14D535283A9E9E00E1D5E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		71EEDF2C282660F400F0C07F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -252,6 +272,14 @@
 				5A14D532283A333B00E1D5E1 /* CustomButton.swift */,
 			);
 			path = CustomButton;
+			sourceTree = "<group>";
+		};
+		5A14D539283A9E9E00E1D5E1 /* dancingDragonsTests */ = {
+			isa = PBXGroup;
+			children = (
+				5A14D53A283A9E9E00E1D5E1 /* dancingDragonsTests.swift */,
+			);
+			path = dancingDragonsTests;
 			sourceTree = "<group>";
 		};
 		6685FF005CFDEB86E2D14FBF /* Pods */ = {
@@ -370,6 +398,7 @@
 			isa = PBXGroup;
 			children = (
 				71EEDF31282660F400F0C07F /* dancingDragons */,
+				5A14D539283A9E9E00E1D5E1 /* dancingDragonsTests */,
 				71EEDF30282660F400F0C07F /* Products */,
 				6685FF005CFDEB86E2D14FBF /* Pods */,
 				9C90F077F318557B9F3806F0 /* Frameworks */,
@@ -380,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				71EEDF2F282660F400F0C07F /* dancingDragons.app */,
+				5A14D538283A9E9E00E1D5E1 /* dancingDragonsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -563,6 +593,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		5A14D537283A9E9E00E1D5E1 /* dancingDragonsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5A14D540283A9E9E00E1D5E1 /* Build configuration list for PBXNativeTarget "dancingDragonsTests" */;
+			buildPhases = (
+				5A14D534283A9E9E00E1D5E1 /* Sources */,
+				5A14D535283A9E9E00E1D5E1 /* Frameworks */,
+				5A14D536283A9E9E00E1D5E1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5A14D53D283A9E9E00E1D5E1 /* PBXTargetDependency */,
+			);
+			name = dancingDragonsTests;
+			productName = dancingDragonsTests;
+			productReference = 5A14D538283A9E9E00E1D5E1 /* dancingDragonsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		71EEDF2E282660F400F0C07F /* dancingDragons */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 71EEDF43282660F800F0C07F /* Build configuration list for PBXNativeTarget "dancingDragons" */;
@@ -589,9 +637,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
+				LastSwiftUpdateCheck = 1320;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
+					5A14D537283A9E9E00E1D5E1 = {
+						CreatedOnToolsVersion = 13.2.1;
+						TestTargetID = 71EEDF2E282660F400F0C07F;
+					};
 					71EEDF2E282660F400F0C07F = {
 						CreatedOnToolsVersion = 13.3;
 					};
@@ -611,11 +663,19 @@
 			projectRoot = "";
 			targets = (
 				71EEDF2E282660F400F0C07F /* dancingDragons */,
+				5A14D537283A9E9E00E1D5E1 /* dancingDragonsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5A14D536283A9E9E00E1D5E1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		71EEDF2D282660F400F0C07F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -670,6 +730,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5A14D534283A9E9E00E1D5E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5A14D53B283A9E9E00E1D5E1 /* dancingDragonsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		71EEDF2B282660F400F0C07F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -754,6 +822,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		5A14D53D283A9E9E00E1D5E1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 71EEDF2E282660F400F0C07F /* dancingDragons */;
+			targetProxy = 5A14D53C283A9E9E00E1D5E1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		71EEDF3D282660F800F0C07F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -766,6 +842,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		5A14D53E283A9E9E00E1D5E1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FB3F6BT9Z5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hr.fer.bokarica.luka.dancingDragonsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dancingDragons.app/dancingDragons";
+			};
+			name = Debug;
+		};
+		5A14D53F283A9E9E00E1D5E1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LIBRARY = "libc++";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = FB3F6BT9Z5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = hr.fer.bokarica.luka.dancingDragonsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/dancingDragons.app/dancingDragons";
+			};
+			name = Release;
+		};
 		71EEDF41282660F800F0C07F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -943,6 +1059,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5A14D540283A9E9E00E1D5E1 /* Build configuration list for PBXNativeTarget "dancingDragonsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5A14D53E283A9E9E00E1D5E1 /* Debug */,
+				5A14D53F283A9E9E00E1D5E1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		71EEDF2A282660F400F0C07F /* Build configuration list for PBXProject "dancingDragons" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

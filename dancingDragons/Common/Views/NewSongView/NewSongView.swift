@@ -23,7 +23,6 @@ class NewSongView: UIView {
         textField.updatePlaceHolderWith(string: "Song name", fontColor: .lightGray)
         textField.keyboardType = .alphabet
         textField.returnKeyType = .next
-        //textField.nextTextField = firstNameField
         
         return textField
     }()
@@ -33,6 +32,15 @@ class NewSongView: UIView {
         button.titleLabel?.textColor = .appWhite
         button.setTitle("Choose album", for: .normal)
         button.backgroundColor = .appBlack
+        
+        return button
+    }()
+    
+    private lazy var confirmButton: CustomButton = {
+        let button = CustomButton()
+        button.titleLabel?.textColor = .white
+        button.setTitle("Confirm", for: .normal)
+        button.backgroundColor = .systemBlue
         
         return button
     }()
@@ -61,6 +69,7 @@ class NewSongView: UIView {
     private func addSubviews() {
         self.addSubview(songTitleField)
         self.addSubview(albumButton)
+        self.addSubview(confirmButton)
     }
     
     private func setConstraints() {
@@ -74,6 +83,12 @@ class NewSongView: UIView {
             $0.top.equalTo(songTitleField.snp.bottom).offset(30)
             $0.leading.trailing.equalToSuperview().inset(45)
             $0.height.equalTo(50)
+        }
+        
+        confirmButton.snp.remakeConstraints {
+            $0.bottom.equalToSuperview().offset(-30)
+            $0.leading.trailing.equalToSuperview().inset(45)
+            $0.height.equalTo(60)
         }
     }
     
@@ -104,6 +119,14 @@ class NewSongView: UIView {
                     guard let _ = self else { return }
                     self?.albumButton.setTitle(item, for: .normal)
                 }
+            })
+            .disposed(by: disposeBag)
+        
+        confirmButton
+            .rx.tap
+            .subscribe(onNext: { [weak self] _ in
+                guard let self = self else { return }
+                
             })
             .disposed(by: disposeBag)
     }
