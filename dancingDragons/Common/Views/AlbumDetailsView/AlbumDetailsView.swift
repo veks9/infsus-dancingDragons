@@ -15,6 +15,7 @@ class AlbumDetailsView: UIView {
     private lazy var imageView: UIImageView = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
+        view.layer.cornerRadius = 15
         
         return view
     }()
@@ -39,7 +40,6 @@ class AlbumDetailsView: UIView {
     
     init() {
         super.init(frame: .zero)
-        clipsToBounds = true
         layer.cornerRadius = 15
         addSubviews()
         setConstraints()

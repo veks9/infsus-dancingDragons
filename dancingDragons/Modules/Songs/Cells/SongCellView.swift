@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import RxSwift
 
 class SongCellView: UITableViewCell {
     private var viewModel: SongCellViewModel?
+    private let disposeBag = DisposeBag()
     
     // MARK: - Views
     private lazy var albumCoverImageView: UIImageView = {
@@ -56,13 +58,27 @@ class SongCellView: UITableViewCell {
         }
         
         titleLabel.snp.remakeConstraints {
-            $0.leading.trailing.equalToSuperview().offset(16)
+            $0.leading.equalTo(albumCoverImageView.snp.trailing).offset(16)
+            $0.trailing.equalToSuperview().inset(16)
             $0.centerY.equalToSuperview()
         }
     }
     
     func updateUI(viewModel: SongCellViewModel) {
-//        albumCoverImageView.setImage(viewModel.fetchAlbumCover()) 
+        albumCoverImageView.setImage(nil)
         titleLabel.text = viewModel.title
+        
+        fetchCoverImage(with: viewModel.albumId)
+    }
+    
+    func fetchCoverImage(with id: Int?) {
+        if let id = id {
+            AlbumService().getAlbum(with: id)
+                .subscribe(onNext: { [weak self] album in
+                    guard let self = self else { return }
+                    self.albumCoverImageView.setImage(album.coverImage)
+                })
+                .disposed(by: disposeBag)
+        }
     }
 }

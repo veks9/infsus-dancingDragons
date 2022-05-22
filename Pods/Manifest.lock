@@ -1,0 +1,62 @@
+PODS:
+  - Alamofire (5.6.1)
+  - DropDown (2.3.13)
+  - Kingfisher (7.2.1)
+  - RxCocoa (6.5.0):
+    - RxRelay (= 6.5.0)
+    - RxSwift (= 6.5.0)
+  - RxGesture (4.0.4):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxKeyboard (2.0.0):
+    - RxCocoa (~> 6.0)
+    - RxSwift (~> 6.0)
+  - RxRelay (6.5.0):
+    - RxSwift (= 6.5.0)
+  - RxSwift (6.5.0)
+  - SnapKit (5.6.0)
+  - SwiftFormat/CLI (0.49.8)
+  - SwiftLint (0.47.1)
+
+DEPENDENCIES:
+  - Alamofire
+  - DropDown
+  - Kingfisher
+  - RxCocoa
+  - RxGesture
+  - RxKeyboard
+  - RxSwift
+  - SnapKit
+  - SwiftFormat/CLI
+  - SwiftLint
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - DropDown
+    - Kingfisher
+    - RxCocoa
+    - RxGesture
+    - RxKeyboard
+    - RxRelay
+    - RxSwift
+    - SnapKit
+    - SwiftFormat
+    - SwiftLint
+
+SPEC CHECKSUMS:
+  Alamofire: 87bd8c952f9a4454320fce00d9cc3de57bcadaf5
+  DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
+  Kingfisher: 7c084bebf7d548c623ad41bcf765fb200efed369
+  RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxGesture: f3efb47ed2d26a8082f7b660d4a59970e275a7f8
+  RxKeyboard: 4f5863f43b4ff0cbb2a20b94688d6b80c8a43c14
+  RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SwiftFormat: e2342d528f9aee7062abb644ba6c7c01446919d7
+  SwiftLint: f80f1be7fa96d30e0aa68e58d45d4ea1ccaac519
+
+PODFILE CHECKSUM: 89342e2ed7cd2400a373940b9eeaeeef6cff3276
+
+COCOAPODS: 1.11.2
