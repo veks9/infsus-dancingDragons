@@ -19,10 +19,12 @@ class NewSongViewModel {
     let id: Int
     let title: String
     let albumId: Int
+    let newSongScreenType: NewSongScreenType
     
     init(id: Int,
          title: String,
-         albumId: Int
+         albumId: Int,
+         newSongScreenType: NewSongScreenType
     ){
         self.id = id
         self.title = title
@@ -30,6 +32,7 @@ class NewSongViewModel {
         self.albums = []
         self.albumService = AlbumService()
         self.songService = SongService()
+        self.newSongScreenType = newSongScreenType
         fetchAlbums()
     }
     
@@ -37,19 +40,23 @@ class NewSongViewModel {
         albumService.getAlbums()
             .subscribe(onNext: { [weak self] albums in
                 guard let self = self else { return }
-                albums.map { album in
+                albums.forEach { album in
                     self.albums.append((album.title, album.id))
                 }
             })
             .disposed(by: disposeBag)
     }
     
-//    func updateSong() {
-//        songService.updateSong(song: new SongBody())()
-//            .subscribe(onNext: { [weak self] _ in
-//                guard let self = self else { return }
-//
-//            })
-//            .disposed(by: disposeBag)
-//    }
+    func updateSong(title: String?, albumId: Int) -> Observable<String> {
+        songService.updateSong(with: id, song: Model.SongBody(title: title ?? "", albumId: albumId))
+    }
+    
+    func createSong(title: String?, albumId: Int) -> Observable<Model.SongResponse>{
+        songService.createSong(song: Model.SongBody(title: title ?? "", albumId: albumId))
+    }
+}
+
+enum NewSongScreenType {
+    case update
+    case create
 }

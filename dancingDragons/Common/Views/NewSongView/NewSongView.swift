@@ -18,7 +18,7 @@ class NewSongView: UIView {
     private let disposeBag = DisposeBag()
     
     // MARK: - Views
-    private lazy var songTitleField: CustomTextField = {
+    lazy var songTitleField: CustomTextField = {
         let textField = CustomTextField()
         textField.updatePlaceHolderWith(string: "Song name", fontColor: .lightGray)
         textField.keyboardType = .alphabet
@@ -27,7 +27,7 @@ class NewSongView: UIView {
         return textField
     }()
     
-    private lazy var albumButton: CustomButton = {
+    lazy var albumButton: CustomButton = {
         let button = CustomButton()
         button.titleLabel?.textColor = .appWhite
         button.setTitle("Choose album", for: .normal)
@@ -36,7 +36,7 @@ class NewSongView: UIView {
         return button
     }()
     
-    private lazy var confirmButton: CustomButton = {
+    lazy var confirmButton: CustomButton = {
         let button = CustomButton()
         button.titleLabel?.textColor = .white
         button.setTitle("Confirm", for: .normal)
@@ -100,8 +100,6 @@ class NewSongView: UIView {
             item.1 == viewModel.albumId
         })?.0 ?? "Choose album"
         
-        print(viewModel.albums)
-        
         self.albumButton.setTitle(album, for: .normal)
     }
     
@@ -119,14 +117,6 @@ class NewSongView: UIView {
                     guard let _ = self else { return }
                     self?.albumButton.setTitle(item, for: .normal)
                 }
-            })
-            .disposed(by: disposeBag)
-        
-        confirmButton
-            .rx.tap
-            .subscribe(onNext: { [weak self] _ in
-                guard let self = self else { return }
-                
             })
             .disposed(by: disposeBag)
     }

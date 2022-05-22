@@ -8,8 +8,6 @@
 import Alamofire
 
 struct UpdateSongRequest: APIRequest {
-    var requestBody: Data?
-    
     typealias ResponseType = String
     
     var path: String {
@@ -17,9 +15,12 @@ struct UpdateSongRequest: APIRequest {
     }
     
     let songId: Int
+    var songBody: Model.SongBody
     var query: String?
     var httpMethod: HTTPMethod = .post
-    //var requestBody: Model.SongBody
+    var requestBody: Data? {
+        songBody.data
+    }
     var authentificationType: AuthentificationType = .none
 }
 
