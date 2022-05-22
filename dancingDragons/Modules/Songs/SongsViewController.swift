@@ -122,6 +122,21 @@ extension SongsViewController: UITableViewDataSource {
             }
         }
     }
+    
+    func tableView(_ tableView: UITableView,
+                   leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration?
+    {
+        let closeAction = UIContextualAction(style: .normal, title:  "Update", handler: { (ac:UIContextualAction, view:UIView, success:(Bool) -> Void) in
+            switch self.viewModel.filteredData[indexPath.row] {
+            case .song(let viewModel):
+                self.present(NewSongViewController(viewModel: NewSongViewModel(id: viewModel.id, title: viewModel.title, albumId: viewModel.albumId ?? 0)), animated: true) 
+            }
+            success(true)
+        })
+        closeAction.backgroundColor = .systemBlue
+        
+        return UISwipeActionsConfiguration(actions: [closeAction])
+    }
 }
 
 // MARK: - UITableViewDelegate

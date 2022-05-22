@@ -8,6 +8,8 @@
 import Alamofire
 
 struct UpdateSongRequest: APIRequest {
+    var requestBody: Data?
+    
     typealias ResponseType = String
     
     var path: String {
