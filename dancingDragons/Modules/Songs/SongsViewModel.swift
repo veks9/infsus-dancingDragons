@@ -10,22 +10,33 @@ import RxSwift
 import RxRelay
 
 class SongsViewModel {
-    let songService: SongServicing
+    private let songService: SongServicing
+    private let albumService: AlbumServicing
     private let disposeBag = DisposeBag()
+    
     var dataSource: [SongCellType] = [] 
     
     var tableViewReloadRelay = PublishRelay<Void>()
     
-    init(songService: SongServicing = SongService()) {
+    init(
+        songService: SongServicing = SongService(),
+        albumService: AlbumServicing = AlbumService()
+    ) {
         self.songService = songService
+        self.albumService = albumService
     }
     
     func fetch() {
         songService.getSongs()
             .subscribe(onNext: { [weak self] songs in
                 guard let self = self else { return }
+                var songs = songs.sorted(by: { $0.albumId ?? 0 < $1.albumId ?? 0 })
                 self.dataSource = songs.map { song in
-                    SongCellType.song(SongCellViewModel(id: song.id, title: song.title, albumCover: "", artistIds: song.artistIds))
+                    SongCellType.song(SongCellViewModel(id: song.id,
+                                                        title: song.title,
+                                                        albumCover: "",
+                                                        artistIds: song.artistIds,
+                                                        albumId: song.albumId))
                 }
                 self.tableViewReloadRelay.accept(())
             })
