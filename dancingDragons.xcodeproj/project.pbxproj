@@ -41,6 +41,7 @@
 		71BEF152282AD0590016544E /* SongBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEF151282AD0590016544E /* SongBody.swift */; };
 		71BEF154282AD05F0016544E /* AlbumBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEF153282AD05F0016544E /* AlbumBody.swift */; };
 		71BEF156282B0D450016544E /* AddSongsToAlbumRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71BEF155282B0D450016544E /* AddSongsToAlbumRequest.swift */; };
+		71D357B1283A77550072C545 /* DeleteSongRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D357B0283A77550072C545 /* DeleteSongRequest.swift */; };
 		71E8679E28285E02004BCBCF /* UserResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E8679D28285E02004BCBCF /* UserResponse.swift */; };
 		71E867A128285E6D004BCBCF /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E867A028285E6D004BCBCF /* UserService.swift */; };
 		71E867A328285E77004BCBCF /* AgentServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E867A228285E77004BCBCF /* AgentServicing.swift */; };
@@ -121,6 +122,7 @@
 		71BEF151282AD0590016544E /* SongBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongBody.swift; sourceTree = "<group>"; };
 		71BEF153282AD05F0016544E /* AlbumBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumBody.swift; sourceTree = "<group>"; };
 		71BEF155282B0D450016544E /* AddSongsToAlbumRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSongsToAlbumRequest.swift; sourceTree = "<group>"; };
+		71D357B0283A77550072C545 /* DeleteSongRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteSongRequest.swift; sourceTree = "<group>"; };
 		71E8679D28285E02004BCBCF /* UserResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserResponse.swift; sourceTree = "<group>"; };
 		71E867A028285E6D004BCBCF /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		71E867A228285E77004BCBCF /* AgentServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgentServicing.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 			children = (
 				71BEF14D282ACD180016544E /* CreateSongRequest.swift */,
 				5A14D51E28366F1100E1D5E1 /* FetchSongsRequest.swift */,
+				71D357B0283A77550072C545 /* DeleteSongRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -733,6 +736,7 @@
 				71AFC55028352375006C2A54 /* FetchAlbumsRequest.swift in Sources */,
 				5A14D51628366AA400E1D5E1 /* SongsViewController.swift in Sources */,
 				5A14D50F28356AA200E1D5E1 /* AlbumDetailsView.swift in Sources */,
+				71D357B1283A77550072C545 /* DeleteSongRequest.swift in Sources */,
 				71AFC5552835294A006C2A54 /* AlbumCellViewModel.swift in Sources */,
 				71E8679E28285E02004BCBCF /* UserResponse.swift in Sources */,
 				5A14D51D28366C7A00E1D5E1 /* SongCellViewModel.swift in Sources */,

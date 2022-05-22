@@ -16,4 +16,8 @@ class SongService: SongServicing {
     func getSongs() -> Observable<[Model.SongResponse]> {
         APIClient.shared.performRequest(FetchSongsRequest()).asObservable()
     }
+    
+    func deleteSong(with id: Int) -> Observable<String> {
+        APIClient.shared.performRequest(DeleteSongRequest(songId: id)).asObservable()
+    }
 }

@@ -11,4 +11,5 @@ import RxSwift
 protocol SongServicing {
     func createSong(song: Model.SongBody) -> Observable<Model.SongResponse>
     func getSongs() -> Observable<[Model.SongResponse]>
+    func deleteSong(with id: Int) -> Observable<String>
 }

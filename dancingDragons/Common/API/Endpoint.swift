@@ -26,6 +26,7 @@ enum Endpoint {
     case allAlbums
     case allSongs
     case album(Int)
+    case deleteSong(Int)
 
     var path: String {
        NetworkConstants.baseURLString + _path
@@ -69,6 +70,8 @@ enum Endpoint {
             return "/song/all"
         case .album(let albumId):
             return "/album/\(albumId)/get"
+        case .deleteSong(let songId):
+            return "/song/\(songId)/delete"
         }
     }
 }

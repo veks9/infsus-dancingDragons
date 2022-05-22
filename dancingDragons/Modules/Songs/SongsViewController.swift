@@ -115,7 +115,10 @@ extension SongsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            // handle delete (by removing the data from your array and updating the tableview)
+            switch viewModel.dataSource[indexPath.row] {
+            case .song(let viewModel):
+                self.viewModel.deleteSong(with: viewModel.id)
+            }
         }
     }
 }
