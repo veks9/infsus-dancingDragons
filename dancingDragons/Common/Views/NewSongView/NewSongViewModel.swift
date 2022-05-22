@@ -11,7 +11,7 @@ import RxRelay
 import UIKit
 
 class NewSongViewModel {
-    var albums: [String]
+    var albums: [(String, Int)]
     let albumService: AlbumServicing
     private let disposeBag = DisposeBag()
 
@@ -43,7 +43,7 @@ class NewSongViewModel {
             .subscribe(onNext: { [weak self] albums in
                 guard let self = self else { return }
                 albums.map { album in
-                    self.albums.append(album.title)
+                    self.albums.append((album.title, album.id))
                 }
             })
             .disposed(by: disposeBag)

@@ -56,6 +56,13 @@ class SongsViewModel {
                         return viewModel.id == id
                     }
                 }
+                
+                self.filteredData.removeAll { songType in
+                    switch songType {
+                    case .song(let viewModel):
+                        return viewModel.id == id
+                    }
+                }
                 self.tableViewReloadRelay.accept(())
             })
             .disposed(by: disposeBag)

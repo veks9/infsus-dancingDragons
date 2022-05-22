@@ -80,6 +80,14 @@ class NewSongView: UIView {
     func updateUI(viewModel: NewSongViewModel) {
         self.viewModel = viewModel
         self.songTitleField.text = viewModel.title
+        
+        let album = viewModel.albums.first(where: { item in
+            item.1 == viewModel.albumId
+        })?.0 ?? "Choose album"
+        
+        print(viewModel.albums)
+        
+        self.albumButton.setTitle(album, for: .normal)
     }
     
     private func observe() {
@@ -89,7 +97,7 @@ class NewSongView: UIView {
                 guard let self = self else { return }
                 
                 self.dropDown.anchorView = self.albumButton
-                self.dropDown.dataSource = self.viewModel?.albums ?? []
+                self.dropDown.dataSource = self.viewModel?.albums.map({$0.0 }) ?? []
                 self.dropDown.bottomOffset = CGPoint(x: 0, y: self.albumButton.frame.size.height)
                 self.dropDown.show()
                 self.dropDown.selectionAction = { [weak self] (index: Int, item: String) in

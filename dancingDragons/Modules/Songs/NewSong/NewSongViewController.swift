@@ -32,7 +32,6 @@ class NewSongViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        viewModel.fetch(id: viewModel.id)
     }
     
     override func viewDidLoad() {
