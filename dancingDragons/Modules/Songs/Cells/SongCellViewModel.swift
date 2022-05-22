@@ -9,24 +9,23 @@ import Foundation
 import RxSwift
 
 class SongCellViewModel {
-    let albumService: AlbumServicing
-    private let disposeBag = DisposeBag()
-
     let id: Int
     let title: String
-    let albumId: Int
+    let albumCover: String
     let artistIds: [Int]
+    let albumId: Int?
+    
     init(
         id: Int,
         title: String,
-        albumId: Int,
+        albumCover: String,
         artistIds: [Int],
-        albumService: AlbumServicing = AlbumService()
+        albumId: Int?
     ) {
         self.id = id
-        self.albumId = albumId
+        self.albumCover = albumCover
         self.title = title
         self.artistIds = artistIds
-        self.albumService = albumService
+        self.albumId = albumId
     }
 }
