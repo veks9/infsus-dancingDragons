@@ -55,7 +55,7 @@ class SongsViewController: UIViewController {
         setConstraints()
         observe()
         title = "Songs"
-        let rightItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showSongDetails))
+        let rightItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newSong))
         navigationItem.rightBarButtonItem = rightItem
         view.backgroundColor = .appWhite
     }
@@ -87,7 +87,7 @@ class SongsViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
-    @objc func showSongDetails() {
+    @objc func newSong() {
         present(NewSongViewController(viewModel: NewSongViewModel(id: 0, title: "", artistIds: [], albumId: 0)), animated: true, completion: nil)
     }
 }
